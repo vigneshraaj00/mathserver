@@ -119,8 +119,19 @@ def rectarea(request):
         context['b'] = b
         print('Area=',area)
     return render(request,'myapp/math.html',context)
-'''
+ urls.py
 
+from django.contrib import admin
+from django.urls import path
+from myapp import views
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('areaofrectangle/',views.rectarea,name="areaofrectangle"),
+    path('',views.rectarea,name="areaofrectangleroot")
+]
+'''
 ## OUTPUT:
 ![OUTPUT](./out.png)
 
